@@ -9,6 +9,7 @@ private:
     Vector2f pos;
     SDL_Rect currentFrame;
     SDL_Texture* texture;
+    bool destroy = false;
 public:
     Entity(Vector2f p_pos, SDL_Texture* p_tex);
     Vector2f& getPos(){
@@ -17,4 +18,11 @@ public:
     SDL_Texture* get_Texture();
     SDL_Rect get_Rect();
 
+    void setPos(float x, float y);
+
+    void checkColision(Entity entity);
+
+    void setDestroy(bool destr);
+
+    bool getDestroy();
 };
